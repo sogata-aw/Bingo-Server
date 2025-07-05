@@ -9,12 +9,10 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 disconnect_timers = {}
 
-json_data = load_data()
-
-connection.init_sockets(socketio, json_data)
-bingoSockets.init_sockets(socketio, json_data)
-bingo.init_routes(app, json_data)
-debug.init_routes(app, json_data)
+# connection.init_sockets(socketio, json_data)
+# bingoSockets.init_sockets(socketio, json_data)
+bingo.init_routes(app)
+# debug.init_routes(app, json_data)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
