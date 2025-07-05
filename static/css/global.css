@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Nerd Font";
+    src: url("/fonts/NerdFont.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Blitz Main";
+    src: url("/fonts/BlitzMain.otf") format("opentype");
+}
+
+:root {
+    /* --gold: #D6C37B; */
+    /* --blue: #55C1DF; */
+    /* --pink: #D94697; */
+    /* --background: #041432; */
+    --text: white;
+
+    background-image: url("/images/background.png");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-color: black;
+
+    font-size: 4mm;
+}
+
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    color: var(--text);
+    font-family: "Blitz Main", "Nerd Font", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+header > * { margin: auto; }
