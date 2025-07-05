@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="frc">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='bingo.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bingo-style.css') }}">
+</head>
+<body>
+<div class="actions padding-20 hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shuffle"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/>
+        <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-lock-fill"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eraser"
+         viewBox="0 0 16 16">
+        <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z"/>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-repeat"
+         viewBox="0 0 16 16">
+        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+        <path fill-rule="evenodd"
+              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+    </svg>
+</div>
+
+<div class="team1 padding-20 flex-column-center">
+</div>
+
+<div class="grid">
+  <div class="case" id="0" draggable="false">Test</div>
+  <div class="case" id="1" draggable="false">Test</div>
+  <div class="case" id="2" draggable="false">Test</div>
+  <div class="case" id="3" draggable="false">Test</div>
+  <div class="case" id="4" draggable="false">Test</div>
+  <div class="case" id="5" draggable="false">Test</div>
+  <div class="case" id="6" draggable="false">Test</div>
+  <div class="case" id="7" draggable="false">Test</div>
+  <div class="case" id="8" draggable="false">Test</div>
+  <div class="case" id="9" draggable="false">Test</div>
+  <div class="case" id="10" draggable="false">Test</div>
+  <div class="case" id="11" draggable="false">Test</div>
+  <div class="case" id="12" draggable="false">Test</div>
+  <div class="case" id="13" draggable="false">Test</div>
+  <div class="case" id="14" draggable="false">Test</div>
+  <div class="case" id="15" draggable="false">Test</div>
+  <div class="case" id="16" draggable="false">Test</div>
+  <div class="case" id="17" draggable="false">Test</div>
+  <div class="case" id="18" draggable="false">Test</div>
+  <div class="case" id="19" draggable="false">Test</div>
+  <div class="case" id="20" draggable="false">Test</div>
+  <div class="case" id="21" draggable="false">Test</div>
+  <div class="case" id="22" draggable="false">Test</div>
+  <div class="case" id="23" draggable="false">Test</div>
+  <div class="case" id="24" draggable="false">Test</div>
+  <div class="case" id="25" draggable="false">Test</div>
+  <div class="case" id="26" draggable="false">Test</div>
+  <div class="case" id="27" draggable="false">Test</div>
+  <div class="case" id="28" draggable="false">Test</div>
+  <div class="case" id="29" draggable="false">Test</div>
+  <div class="case" id="30" draggable="false">Test</div>
+  <div class="case" id="31" draggable="false">Test</div>
+  <div class="case" id="32" draggable="false">Test</div>
+  <div class="case" id="33" draggable="false">Test</div>
+  <div class="case" id="34" draggable="false">Test</div>
+  <div class="case" id="35" draggable="false">Test</div>
+  <div class="case" id="36" draggable="false">Test</div>
+  <div class="case" id="37" draggable="false">Test</div>
+  <div class="case" id="38" draggable="false">Test</div>
+  <div class="case" id="39" draggable="false">Test</div>
+  <div class="case" id="40" draggable="false">Test</div>
+  <div class="case" id="41" draggable="false">Test</div>
+  <div class="case" id="42" draggable="false">Test</div>
+  <div class="case" id="43" draggable="false">Test</div>
+  <div class="case" id="44" draggable="false">Test</div>
+  <div class="case" id="45" draggable="false">Test</div>
+  <div class="case" id="46" draggable="false">Test</div>
+  <div class="case" id="47" draggable="false">Test</div>
+  <div class="case" id="48" draggable="false">Test</div>
+  <div class="case" id="49" draggable="false">Test</div>
+  <div class="case" id="50" draggable="false">Test</div>
+  <div class="case" id="51" draggable="false">Test</div>
+  <div class="case" id="52" draggable="false">Test</div>
+  <div class="case" id="53" draggable="false">Test</div>
+  <div class="case" id="54" draggable="false">Test</div>
+  <div class="case" id="55" draggable="false">Test</div>
+  <div class="case" id="56" draggable="false">Test</div>
+  <div class="case" id="57" draggable="false">Test</div>
+  <div class="case" id="58" draggable="false">Test</div>
+  <div class="case" id="59" draggable="false">Test</div>
+  <div class="case" id="60" draggable="false">Test</div>
+  <div class="case" id="61" draggable="false">Test</div>
+  <div class="case" id="62" draggable="false">Test</div>
+  <div class="case" id="63" draggable="false">Test</div>
+</div>
+
+
+<div class="team2 padding-20 flex-column-center">
+</div>
+<div class="neutral padding-20 hidden">
+</div>
+</body>
+</html>

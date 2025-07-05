@@ -1,0 +1,307 @@
+{
+    "bingo": {
+        "loggedUsers": [
+            {
+                "sid": "B04BQCd6Q1jHUPLoAAAl",
+                "name": "Test2",
+                "team": "team2"
+            },
+            {
+                "sid": "WCprQFkxJqf4Ke6TAAAL",
+                "name": "Soga",
+                "team": "team1"
+            }
+        ],
+        "name": "1",
+        "state": {
+            "0": {
+                "text": "Battre le seul boss apparu dans les 3 jeux (dans n'importe lequel)",
+                "state": ""
+            },
+            "1": {
+                "text": "Obtenir le titre N\u00b0 1 en super saut",
+                "state": ""
+            },
+            "2": {
+                "text": "Battre le boss final de l'Octo Expansion",
+                "state": ""
+            },
+            "3": {
+                "text": "Am\u00e9liorer d'une \u00e9toile 3 \u00e9quipements",
+                "state": ""
+            },
+            "4": {
+                "text": "Dessiner un Inkling avec de l'encre",
+                "state": ""
+            },
+            "5": {
+                "text": "Monter 5 armes 1 \u00e9toile",
+                "state": ""
+            },
+            "6": {
+                "text": "Obtenir le titre N\u00b0 1 au combat",
+                "state": ""
+            },
+            "7": {
+                "text": "Faire un match sur la derni\u00e8re map de tout Splatoon",
+                "state": ""
+            },
+            "8": {
+                "text": "Jouer sur une map qui \u00e9tait en travaux dans un ancien opus",
+                "state": ""
+            },
+            "9": {
+                "text": "Vaincre 5 T\u00eate-de-pneu",
+                "state": ""
+            },
+            "10": {
+                "text": "Trouver 3 personnes qui jouent \u00e0 Splatoon hors serveur Nintendo",
+                "state": ""
+            },
+            "11": {
+                "text": "Speedrun de la tour de l'ordre (d\u00e9but ~30min)",
+                "state": ""
+            },
+            "12": {
+                "text": "Quizz sur l\u2019univers du jeu (vers 15h - 20/30min)",
+                "state": ""
+            },
+            "13": {
+                "text": "Faire un K.O. en match Anarchie",
+                "state": ""
+            },
+            "14": {
+                "text": "Photo contest ? (avant 15h)",
+                "state": ""
+            },
+            "15": {
+                "text": "Finir le tutoriel de l\u2019un des Splatoon",
+                "state": ""
+            },
+            "16": {
+                "text": "Jouer sur une map introduite dans Splatoon 2",
+                "state": ""
+            },
+            "17": {
+                "text": "Gagner un match en jouant le D\u00e9tubeur modifi\u00e9",
+                "state": ""
+            },
+            "18": {
+                "text": "R\u00e9ussir \u00e0 lancer un match en rang X",
+                "state": ""
+            },
+            "19": {
+                "text": "Battre le boss final du 3 en moins de 30min (plus peut-\u00eatre)",
+                "state": ""
+            },
+            "20": {
+                "text": "Faire la mission n\u00b012 du secteur 6 en moins d'1min20 sans armes",
+                "state": ""
+            },
+            "21": {
+                "text": "Vaincre Cannon parall\u00e8le dans la Tour de l'Ordre",
+                "state": ""
+            },
+            "22": {
+                "text": "Gagner une partie avec la team enti\u00e8re en \u00e9quipement h\u00e9ro\u00efque",
+                "state": ""
+            },
+            "23": {
+                "text": "Terminer un niveau Octaling dans le mode histoire du 2",
+                "state": ""
+            },
+            "24": {
+                "text": "Gagner avec une \u00e9quipe compos\u00e9e uniquement de snipers",
+                "state": ""
+            },
+            "25": {
+                "text": "Gagner un match en jouant le Liquidateur Pro (Splattershot Pro)",
+                "state": ""
+            },
+            "26": {
+                "text": "Faire un match sur la 1\u00e8re map de tout Splatoon",
+                "state": ""
+            },
+            "27": {
+                "text": "Gagner avec plus de 65% de la map encr\u00e9e en guerre de territoire",
+                "state": ""
+            },
+            "28": {
+                "text": "Obtenir 3 nouveaux \u00e9quipements",
+                "state": ""
+            },
+            "29": {
+                "text": "Gagner 3 matchs cartes et territoires",
+                "state": ""
+            },
+            "30": {
+                "text": "R\u00e9aliser une \u00e9limination tout seul ou 3 en \u00e9quipe",
+                "state": ""
+            },
+            "31": {
+                "text": "Battre un boss de Splatoon 1",
+                "state": ""
+            },
+            "32": {
+                "text": "Finir tous les niveaux de l'Octo Canyon (zone d\u2019intro avant Alterna)",
+                "state": ""
+            },
+            "33": {
+                "text": "Obtenir un \u00e9quipement avec 3 bonus pareils",
+                "state": ""
+            },
+            "34": {
+                "text": "Lancer une squid party avec des randoms",
+                "state": ""
+            },
+            "35": {
+                "text": "Bataille de mini-jeux (vers 16h)",
+                "state": ""
+            },
+            "36": {
+                "text": "Colorer la page easter egg de Google en entier",
+                "state": ""
+            },
+            "37": {
+                "text": "Vaincre 5 Gobb",
+                "state": ""
+            },
+            "38": {
+                "text": "Battre les Tridenfers dans le mode histoire du 3",
+                "state": ""
+            },
+            "39": {
+                "text": "Gagner un match en jouant le Trisperceur (Tri-Stringer)",
+                "state": ""
+            },
+            "40": {
+                "text": "Gagner un match en jouant l'\u00c9pinceau brosse nuanc\u00e9",
+                "state": ""
+            },
+            "41": {
+                "text": "Utiliser 8 sp\u00e9ciaux en une partie",
+                "state": ""
+            },
+            "42": {
+                "text": "Faire un triple kill",
+                "state": ""
+            },
+            "43": {
+                "text": "Gagner un match en jouant le D\u00e9poteur (Tri-Slosher)",
+                "state": ""
+            },
+            "44": {
+                "text": "Gagner 3 guerres de territoires d'affil\u00e9e",
+                "state": ""
+            },
+            "45": {
+                "text": "Faire la mission n\u00b06 du secteur 1 en moins d'1min30",
+                "state": ""
+            },
+            "46": {
+                "text": "Obtenir 3 brevets cartouches",
+                "state": ""
+            },
+            "47": {
+                "text": "\u00c9couter Octoling RendezVous dans le hall",
+                "state": ""
+            },
+            "48": {
+                "text": "Faire un match avec une arme exclusive au 3 (Trisperceur, \u00c9clatana, Lanceur Spatial,...)",
+                "state": ""
+            },
+            "49": {
+                "text": "Faire coucou aux idols des 3 jeux",
+                "state": ""
+            },
+            "50": {
+                "text": "Finir un niveau contenant des eight-ball dans l'Octo Expansion sans mourir",
+                "state": ""
+            },
+            "51": {
+                "text": "Faire un check avec quelqu'un de sa team",
+                "state": ""
+            },
+            "52": {
+                "text": "Faire la mission n\u00b011 du secteur 5 en moins d'1min",
+                "state": ""
+            },
+            "53": {
+                "text": "20 kills avec moins de 5 morts en Anarchie ou moins de 3 morts en Turf",
+                "state": ""
+            },
+            "54": {
+                "text": "Prendre une photo devant le camion d'Omar (Splatoon 2) ou devant l\u00e0 o\u00f9 il \u00e9tait (Splatoon 3)",
+                "state": ""
+            },
+            "55": {
+                "text": "Gagner un match en jouant l'Encrifugeur (Sloshing Machine)",
+                "state": ""
+            },
+            "56": {
+                "text": "Finir la Tour de l'Ordre en low hack avec le Lanceur Octaling",
+                "state": ""
+            },
+            "57": {
+                "text": "Obtenir le titre N\u00b0 1 en encrage de territoire",
+                "state": ""
+            },
+            "58": {
+                "text": "Prendre une photo avec son \u00e9quipe",
+                "state": ""
+            },
+            "59": {
+                "text": "Prendre une photo devant Don Podio",
+                "state": ""
+            },
+            "60": {
+                "text": "Vaincre 5 Gros Boulet",
+                "state": ""
+            },
+            "61": {
+                "text": "R\u00e9cup\u00e9rer 125 \u0153ufs en Salmon Run",
+                "state": ""
+            },
+            "62": {
+                "text": "Finir le niveau secret d'Alterna",
+                "state": ""
+            },
+            "63": {
+                "text": "Obtenir les 3 bonus d'un \u00e9quipement",
+                "state": ""
+            }
+        },
+        "team1": [],
+        "team2": []
+    },
+    "players": [
+        {
+            "name": "Test",
+            "team": "team2"
+        },
+        {
+            "name": "Soga",
+            "team": "team1"
+        },
+        {
+            "name": "Test1",
+            "team": ""
+        },
+        {
+            "name": "Test2",
+            "team": "team2"
+        },
+        {
+            "name": "Test2",
+            "team": "team2"
+        },
+        {
+            "name": "Test3",
+            "team": ""
+        },
+        {
+            "name": "Test2",
+            "team": "team2"
+        }
+    ]
+}

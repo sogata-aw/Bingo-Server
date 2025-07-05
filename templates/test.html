@@ -1,0 +1,68 @@
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+    position: relative;
+  }
+
+  .dragging {
+    opacity: 0.5;
+  }
+</style>
+
+<table id="grille">
+  <tr>
+    <td draggable="true">A</td>
+    <td draggable="true">B</td>
+    <td draggable="true">C</td>
+  </tr>
+  <tr>
+    <td draggable="true">D</td>
+    <td draggable="true">E</td>
+    <td draggable="true">F</td>
+  </tr>
+</table>
+<script>
+let draggedTd = null;
+let originalContent = "";
+
+document.querySelectorAll("td").forEach(td => {
+  td.addEventListener("dragstart", (e) => {
+    draggedTd = td;
+    originalContent = td.innerHTML;
+    td.classList.add("dragging");
+  });
+
+  td.addEventListener("dragover", (e) => {
+    e.preventDefault(); // autorise le drop
+  });
+
+  td.addEventListener("drop", (e) => {
+    e.preventDefault();
+    if (draggedTd && draggedTd !== td) {
+      // Échanger les contenus
+      const temp = td.innerHTML;
+      td.innerHTML = draggedTd.innerHTML;
+      draggedTd.innerHTML = temp;
+    }
+    draggedTd.classList.remove("dragging");
+    draggedTd = null;
+  });
+
+  td.addEventListener("dragend", () => {
+    if (draggedTd) {
+      draggedTd.classList.remove("dragging");
+      draggedTd = null;
+    }
+  });
+});
+</script>
