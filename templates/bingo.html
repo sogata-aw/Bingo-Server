@@ -1,96 +1,57 @@
 <!DOCTYPE html>
 <html lang="frc">
-<head>
-    <meta charset="UTF-8">
-    <title>Bingo</title>
-    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <script type="module" src="{{ url_for('static', filename='bingo.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bingo-style.css') }}">
-</head>
-<body>
-<div class="actions padding-20 hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shuffle"
-         viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-              d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/>
-        <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/>
-    </svg>
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bingo Spoon 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+        <script type="module" src="/static/script/bingo.js"></script>
+        <link rel="stylesheet" href="/static/css/global.css">
+        <link rel="stylesheet" href="/static/css/bingo-style.css">
+        <link rel="icon" type="image/png" href="/static/images/favicon.png">
+    </head>
+    <body>
+        <header>
+            <h1>Bingo Spoon 3</h1>
+        </header>
 
-<div class="team1 padding-20 flex-column-center">
-</div>
+        <div class="bingo-body">
+            <div class="team1 padding-20 flex-column-center">
+            </div>
 
-<div class="grid">
-  <div class="case" id="0" draggable="false">Test</div>
-  <div class="case" id="1" draggable="false">Test</div>
-  <div class="case" id="2" draggable="false">Test</div>
-  <div class="case" id="3" draggable="false">Test</div>
-  <div class="case" id="4" draggable="false">Test</div>
-  <div class="case" id="5" draggable="false">Test</div>
-  <div class="case" id="6" draggable="false">Test</div>
-  <div class="case" id="7" draggable="false">Test</div>
-  <div class="case" id="8" draggable="false">Test</div>
-  <div class="case" id="9" draggable="false">Test</div>
-  <div class="case" id="10" draggable="false">Test</div>
-  <div class="case" id="11" draggable="false">Test</div>
-  <div class="case" id="12" draggable="false">Test</div>
-  <div class="case" id="13" draggable="false">Test</div>
-  <div class="case" id="14" draggable="false">Test</div>
-  <div class="case" id="15" draggable="false">Test</div>
-  <div class="case" id="16" draggable="false">Test</div>
-  <div class="case" id="17" draggable="false">Test</div>
-  <div class="case" id="18" draggable="false">Test</div>
-  <div class="case" id="19" draggable="false">Test</div>
-  <div class="case" id="20" draggable="false">Test</div>
-  <div class="case" id="21" draggable="false">Test</div>
-  <div class="case" id="22" draggable="false">Test</div>
-  <div class="case" id="23" draggable="false">Test</div>
-  <div class="case" id="24" draggable="false">Test</div>
-  <div class="case" id="25" draggable="false">Test</div>
-  <div class="case" id="26" draggable="false">Test</div>
-  <div class="case" id="27" draggable="false">Test</div>
-  <div class="case" id="28" draggable="false">Test</div>
-  <div class="case" id="29" draggable="false">Test</div>
-  <div class="case" id="30" draggable="false">Test</div>
-  <div class="case" id="31" draggable="false">Test</div>
-  <div class="case" id="32" draggable="false">Test</div>
-  <div class="case" id="33" draggable="false">Test</div>
-  <div class="case" id="34" draggable="false">Test</div>
-  <div class="case" id="35" draggable="false">Test</div>
-  <div class="case" id="36" draggable="false">Test</div>
-  <div class="case" id="37" draggable="false">Test</div>
-  <div class="case" id="38" draggable="false">Test</div>
-  <div class="case" id="39" draggable="false">Test</div>
-  <div class="case" id="40" draggable="false">Test</div>
-  <div class="case" id="41" draggable="false">Test</div>
-  <div class="case" id="42" draggable="false">Test</div>
-  <div class="case" id="43" draggable="false">Test</div>
-  <div class="case" id="44" draggable="false">Test</div>
-  <div class="case" id="45" draggable="false">Test</div>
-  <div class="case" id="46" draggable="false">Test</div>
-  <div class="case" id="47" draggable="false">Test</div>
-  <div class="case" id="48" draggable="false">Test</div>
-  <div class="case" id="49" draggable="false">Test</div>
-  <div class="case" id="50" draggable="false">Test</div>
-  <div class="case" id="51" draggable="false">Test</div>
-  <div class="case" id="52" draggable="false">Test</div>
-  <div class="case" id="53" draggable="false">Test</div>
-  <div class="case" id="54" draggable="false">Test</div>
-  <div class="case" id="55" draggable="false">Test</div>
-  <div class="case" id="56" draggable="false">Test</div>
-  <div class="case" id="57" draggable="false">Test</div>
-  <div class="case" id="58" draggable="false">Test</div>
-  <div class="case" id="59" draggable="false">Test</div>
-  <div class="case" id="60" draggable="false">Test</div>
-  <div class="case" id="61" draggable="false">Test</div>
-  <div class="case" id="62" draggable="false">Test</div>
-  <div class="case" id="63" draggable="false">Test</div>
-</div>
+            <div class="grid">
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+                <div draggable="false">Test</div>
+            </div>
 
 
-<div class="team2 padding-20 flex-column-center">
-</div>
-<div class="neutral padding-20 hidden">
-</div>
-</body>
+            <div class="team2 padding-20 flex-column-center">
+            </div>
+            <div class="neutral padding-20 hidden">
+            </div>
+        </div>
+    </body>
 </html>
