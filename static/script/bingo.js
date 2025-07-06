@@ -1,4 +1,4 @@
-import { initView } from "./view/bingo-view.js";
+import { initView } from "../view/bingo-view.js";
 
 const challenges = {
   1: "Monter 5 armes 1 étoile",
@@ -183,44 +183,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             updateBingo(view.cases);
         });
 
-        view.lock.addEventListener("click", () => {
-
-        });
-
-        view.erase.addEventListener("click", () => {
-
-        });
-
-        view.swap.addEventListener("click", () => {
-            if(mode == "click"){
-                view.cases.forEach(div => {
-                    div.removeEventListener("click", clickHandler);
-                    div.draggable = "true";
-                    div.addEventListener("dragstart", (e) => {
-                        e.dataTransfer.setData("text", e.target.id);
-                    });
-                });
-                mode = "swap";
-            }else{
-                view.cases.forEach(div => {
-                    div.addEventListener("click", clickHandler.bind(this, div));
-                });
-                mode = "click";
-            }
-
-        });
-
         view.left.addEventListener("drop", (e) => {
             e.preventDefault();
             const data = e.dataTransfer.getData("text");
-            e.target.appendChild(document.getElementById(data));
+            view.left.appendChild(document.getElementById(data));
             updateUser(data,"team2");
         });
 
         view.right.addEventListener("drop", (e) => {
             e.preventDefault();
             const data = e.dataTransfer.getData("text");
-            e.target.appendChild(document.getElementById(data));
+            view.right.appendChild(document.getElementById(data));
             updateUser(data,"team1");
         });
 

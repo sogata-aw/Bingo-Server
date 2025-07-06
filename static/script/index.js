@@ -1,42 +1,43 @@
-// import { initView } from "../view/index-view.js";
-//
-// const socket = io();
-//
-// function updatePLayer(name, team = ""){
-//     socket.emit('update_player', { name: name, team: team });
-// }
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//     const view = initView();
-//
-//     view.btnLog.addEventListener('click', async function(){
-//         const name = view.nameInput.value;
-//         let exist = await fetch("/playerexist/" + name).then(res => res.text());
-//         console.log(exist);
-//         console.log(name);
-//         if(exist === ""){
-//             updatePLayer(name);
-//         }
-//         if(name === "Soga"){
-//             const password = window.prompt("Veuillez saisir le mdp :", "");
-//             const res = await fetch("/passwd").then(res => res.text());
-//             if(password !== res){
-//                 window.alert("Mot de passe incorrect !");
-//             }else{
-//                 localStorage.setItem("name", name);
-//
-//                 window.location.href = "./bingo";
-//             }
-//         }else{
-//             localStorage.setItem("name", name);
-//             window.location.href = "./bingo";
-//         }
-//     });
-// });
+function setToLocalStorage(name) {
+    localStorage.setItem("name", name);
+    window.location.href = "/bingo.html";
+}
 
 window.onload = () => {
-    loginForm.addEventListener("submit", e => {
+    loginForm.addEventListener("submit", async e => {
         e.preventDefault();
-        alert(`Login de ${loginName.value}`);
+
+        let loginResponse = await fetch(`/login/${loginName.value}`).then(res => res.text());
+
+        if(loginResponse === "OK") {
+            alert(`Login de ${loginName.value}`);
+            setToLocalStorage(loginName.value);
+        }else if(loginResponse === "PASSWORD") {
+            let passwd = prompt("saisissez le mot de passe :", "");
+            let passwdResponse = await fetch("/checkpasswd", {
+                method: "POST",
+                body: JSON.stringify({
+                    password: passwd
+                }),
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+            }).then(res => res.text());
+            if(passwdResponse === "OK") {
+                alert(`Login de ${loginName.value}`);
+                setToLocalStorage(loginName.value);
+            }else{
+                alert("Mot de passe incorrect")
+            }
+
+        }else if(loginResponse === "INVALID") {
+            let addResponse = await fetch(`/login/create/${loginName.value}`);
+            if(addResponse === "OK") {
+                alert(`Login de ${loginName.value}`);
+                setToLocalStorage(loginName.value);
+            }else{
+                alert("Une erreur est survenue");
+            }
+        }
+
+
     });
 }

@@ -1,1 +1,34 @@
-[{ "name": "Flofrost", "team": "blu" }, { "name": "Soga", "team": "red" }, { "name": "Winer", "team": "" }, { "name": "Nolia", "team": "blu" }, { "name": "Gabby", "team": "blu" }, { "name": "Xeoli", "team": "" }, { "name": "Miku", "team": "blu" }]
+[
+    {
+        "name": "Flofrost",
+        "team": "blu"
+    },
+    {
+        "name": "Soga",
+        "team": "red"
+    },
+    {
+        "name": "Winer",
+        "team": ""
+    },
+    {
+        "name": "Nolia",
+        "team": "blu"
+    },
+    {
+        "name": "Gabby",
+        "team": "blu"
+    },
+    {
+        "name": "Xeoli",
+        "team": ""
+    },
+    {
+        "name": "Miku",
+        "team": "blu"
+    },
+    {
+        "name": "Test",
+        "team": ""
+    }
+]
