@@ -1,9 +1,8 @@
 from flask import Flask
 from flask_socketio import SocketIO, emit
 
-from utilitaire import *
 from routes import bingo, debug, connectionRoute
-from sockets import connection, bingoSockets
+from sockets import connectionSockets, bingoSockets
 
 app = Flask(__name__)
 socketio = SocketIO(app)
