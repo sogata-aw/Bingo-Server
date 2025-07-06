@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Nerd Font";
-    src: url("/fonts/NerdFont.otf") format("opentype");
+    src: url("/static/fonts/NerdFont.otf") format("opentype");
 }
 
 @font-face {
     font-family: "Blitz Main";
-    src: url("/fonts/BlitzMain.otf") format("opentype");
+    src: url("/static/fonts/BlitzMain.otf") format("opentype");
 }
 
 :root {
@@ -19,7 +19,7 @@
 
     --border-radius: 3em;
 
-    background-image: url("/images/background.png");
+    background-image: url("/static/images/background.png");
     background-size: 100% auto;
     background-repeat: repeat-y;
     /* background-color: black; */
