@@ -6,8 +6,10 @@ def init_routes(app: Flask):
     # def _():
     #     return render_template('bingo.html', bingo=json_data["bingo"])
 
+    @app.route('/')
     @app.route('/<path:filename>')
-    def _(filename: str):
+    def _(filename: str = ""):
+        print("filename: ", filename)
         if not filename:
             return send_file('static/index.html')
         return send_from_directory("static", filename)
