@@ -10,15 +10,19 @@
 
 :root {
     /* --gold: #D6C37B; */
-    /* --blue: #55C1DF; */
-    /* --pink: #D94697; */
-    /* --background: #041432; */
+    --neon-pink: #FF0098;
+    --neon-blue: #4DFFD0;
+    --purple: #7C5AF6;
+    --background-dark: #181818;
+    --background-light: #6C6C6C;
     --text: white;
+
+    --border-radius: 3em;
 
     background-image: url("/images/background.png");
     background-size: 100% auto;
     background-repeat: repeat-y;
-    background-color: black;
+    /* background-color: black; */
 
     font-size: 4mm;
 }
@@ -32,8 +36,78 @@
     font-family: "Blitz Main", "Nerd Font", sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+body > * { margin: auto; }
+
 header {
     display: flex;
     align-items: center;
+
+    width: max-content;
+    margin: .5em auto;
+    padding: .5em;
+    border-radius: var(--border-radius);
+
+    background: var(--background-dark);
 }
 header > * { margin: auto; }
+
+input[type=text]{
+    padding: .2em .5em;
+    font-size: 110%;
+    border-radius: var(--border-radius);
+    background: var(--background-dark);
+}
+
+input[type=submit], input[type=button], button {
+    padding: .2em .5em;
+    font-size: 110%;
+    border-radius: var(--border-radius);
+    background: var(--purple);
+}
+
+input:hover, button:hover, input:active, button:active {
+    outline: var(--outlineThickness) solid var(--neon-blue);
+    animation-name: outlineHover;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 3em;
+
+    --outlineThickness: 3px;
+    outline: var(--outlineThickness) solid var(--neon-blue);
+    border:  var(--outlineThickness) solid var(--neon-pink);
+
+    border-radius: var(--border-radius);
+    background: repeating-linear-gradient(transparent 0em, color-mix(in oklab, black 20%, transparent) .25em, transparent .5em),
+        color-mix(in oklab, var(--background-light) 70%, transparent);
+
+    animation-name: outlineHover;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+.box > * {
+    margin: .5em;
+}
+
+@keyframes outlineHover{
+from {
+    outline-offset: calc(var(--outlineThickness) * -2);
+}
+50% {
+    outline-offset: 0;
+}
+to {
+    outline-offset: calc(var(--outlineThickness) * -2);
+}
+}
