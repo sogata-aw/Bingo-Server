@@ -16,3 +16,17 @@ def init_sockets(socketio):
     def disconnect(data):
         connected_users.remove(get_player_data(data['name']))
         emit('update_connected_users', connected_users, broadcast=True)
+
+    socketio.on("update_team")
+    def update_team(data):
+        players_data = load_players_data()
+        for player in players_data:
+            if player['name'] == data['name']:
+                player['team'] = data['team']
+
+        for connected_user in connected_users:
+            if connected_user['name'] == data['name']:
+                connected_user['team'] = data['team']
+
+        save_players_data(players_data)
+        socketio.emit('update_connected_users', connected_users, broadcast=True)

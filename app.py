@@ -8,7 +8,7 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 connectionSockets.init_sockets(socketio)
-# bingoSockets.init_sockets(socketio, json_data)
+bingoSockets.init_sockets(socketio)
 bingo.init_routes(app)
 connectionRoute.init_routes(app)
 # debug.init_routes(app, json_data)
