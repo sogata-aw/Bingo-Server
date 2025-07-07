@@ -2,18 +2,9 @@ let bingoView = {}
 
 function initView() {
   bingoView = {
-    bingo : document.querySelector(".grid"),
-    cases : document.querySelectorAll(".case"),
-
-    left : document.querySelector(".team1"),
-
-    right : document.querySelector(".team2"),
-
-    actions : document.querySelector(".actions"),
-
-    neutral : document.querySelector(".neutral"),
-
-    shuffle : document.querySelector(".bi-shuffle"),
+    redTeam : document.querySelector('.team1'),
+    blueTeam : document.querySelector('.team2'),
+    greyTeam : document.querySelector('.neutral'),
   };
   return bingoView;
 }
