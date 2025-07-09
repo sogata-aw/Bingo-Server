@@ -97,3 +97,30 @@ h2{
     animation-iteration-count: infinite;
     animation-duration: 2s;
 }
+
+.score{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.score div{
+    font-size: 20px;
+    display: flex;
+    padding: 10px;
+}
+
+.red{
+    color: red;
+}
+
+.grey{
+    color: grey;
+}
+
+.blue{
+    color: blue;
+}
