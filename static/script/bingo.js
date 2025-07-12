@@ -1,11 +1,12 @@
-const socket = io()
+const socket = io();
+const teamsDisplay = {
+    red : teamRed,
+    blu : teamBlue,
+    neutral : teamNeutral,
+};
 
-const currentPlayerName = localStorage.getItem('name');
-
-function connect(name){
-    console.log("yeah");
-    socket.emit('join', { name: name });
-}
+let bingoData;
+let currentPlayerName;
 
 /** @param {HTMLElement} element */
 function findBingoIndex(element){
@@ -15,48 +16,52 @@ function findBingoIndex(element){
     return undefined
 }
 
+//* @param {object} data*/
+function updateConnectedUsers(data){
+    teamsDisplay.red.innerHTML = '<div style="flex-grow: 1;"></div>';
+    teamsDisplay.blu.innerHTML = '<div style="flex-grow: 1;"></div>';
+    teamsDisplay.neutral.innerHTML = '<div style="flex-grow: 1;"></div>';
+
+    data.forEach(user => {
+        const nameDisplay = document.createElement("p");
+        nameDisplay.textContent = user.name;
+
+        if(!Object.keys(teamsDisplay).includes(user.team)) user.team = "neutral";
+
+        teamsDisplay[user.team].appendChild(nameDisplay);
+
+    })
+
+    teamsDisplay.red.innerHTML += '<div style="flex-grow: 1;"></div>';
+    teamsDisplay.blu.innerHTML += '<div style="flex-grow: 1;"></div>';
+    teamsDisplay.neutral.innerHTML += '<div style="flex-grow: 1;"></div>';
+}
+
+//* @param {object} data*/
+function updateBingoGrid(data){
+    console.log(data);
+    bingoData = data;
+}
+
 window.onload = () => {
-    const teamsDisplay = {
-        red : teamRed,
-        blu : teamBlue,
-        neutral : teamNeutral,
-    };
+    currentPlayerName = localStorage.getItem('name');
+    if(!currentPlayerName){
+        alert("no player name in local storage");
+        return;
+    }
 
-    socket.on('update_connected_users', data => {
-        teamsDisplay.red.innerHTML = '<div style="flex-grow: 1;"></div>';
-        teamsDisplay.blu.innerHTML = '<div style="flex-grow: 1;"></div>';
-        teamsDisplay.neutral.innerHTML = '<div style="flex-grow: 1;"></div>';
-
-        data.forEach(user => {
-            const nameDisplay = document.createElement("p");
-            nameDisplay.textContent = user.name;
-
-            if(!Object.keys(teamsDisplay).includes(user.team)) user.team = "neutral";
-
-            teamsDisplay[user.team].appendChild(nameDisplay);
-
-        })
-
-        teamsDisplay.red.innerHTML += '<div style="flex-grow: 1;"></div>';
-        teamsDisplay.blu.innerHTML += '<div style="flex-grow: 1;"></div>';
-        teamsDisplay.neutral.innerHTML += '<div style="flex-grow: 1;"></div>';
-    });
-
-    socket.on('update_bingo', data => {
-
-    });
+    socket.on('update_connected_users', updateConnectedUsers);
+    socket.on('update_bingo', updateBingoGrid);
 
     for(const child of bingoGrid.children)
         child.addEventListener("click", e => {
             const ii = findBingoIndex(e.target);
             if(ii != undefined){
-                console.log(ii);
+                socket.emit("case_click", {name: currentPlayerName, index: ii});
             }
         });
 
-    connect(currentPlayerName);
+    socket.emit('join', { name: currentPlayerName });
 }
 
-window.onbeforeunload = () => {
-    socket.emit('leave', {"name" : currentPlayerName});
-}
+window.onbeforeunload = () => { socket.emit('leave', {name : currentPlayerName}); };

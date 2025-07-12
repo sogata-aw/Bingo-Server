@@ -1,42 +1,12 @@
-[
-    {
-        "name": "Flofrost",
-        "team": "blu"
-    },
-    {
-        "name": "Soga",
-        "team": "red"
-    },
-    {
-        "name": "Winer",
-        "team": ""
-    },
-    {
-        "name": "Nolia",
-        "team": "blu"
-    },
-    {
-        "name": "Gabby",
-        "team": "blu"
-    },
-    {
-        "name": "Xeoli",
-        "team": ""
-    },
-    {
-        "name": "Miku",
-        "team": "blu"
-    },
-    {
-        "name": "Test",
-        "team": ""
-    },
-    {
-        "name": "sdlkhfskdf",
-        "team": ""
-    },
-    {
-        "name": "Coucou :)",
-        "team": ""
-    }
-]
+{
+    "Flofrost": "blu",
+    "Soga": "red",
+    "Winer": "",
+    "Nolia": "blu",
+    "Gabby": "blu",
+    "Xeoli": "",
+    "Miku": "blu",
+    "Test": "",
+    "sdlkhfskdf": "",
+    "Coucou :)": ""
+}
