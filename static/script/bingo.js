@@ -34,12 +34,16 @@ window.onload = () => {
             if(!Object.keys(teamsDisplay).includes(user.team)) user.team = "neutral";
 
             teamsDisplay[user.team].appendChild(nameDisplay);
-       
+
         })
 
         teamsDisplay.red.innerHTML += '<div style="flex-grow: 1;"></div>';
         teamsDisplay.blu.innerHTML += '<div style="flex-grow: 1;"></div>';
         teamsDisplay.neutral.innerHTML += '<div style="flex-grow: 1;"></div>';
+    });
+
+    socket.on('update_bingo', data => {
+
     });
 
     for(const child of bingoGrid.children)
@@ -49,7 +53,6 @@ window.onload = () => {
                 console.log(ii);
             }
         });
-    
 
     connect(currentPlayerName);
 }

@@ -11,7 +11,7 @@ def init_routes(app: Flask):
     @app.route('/login/<name>')
     def login(name: str):
         if not request.authorization :
-            player_data = load_players_data()
+            player_data = load_data("players.json")
             if not in_players_data(name):
                 return "INVALID"
             elif name == "Soga":
@@ -25,7 +25,7 @@ def init_routes(app: Flask):
 
     @app.route('/login/create/<name>')
     def create(name: str):
-        player_data = load_players_data()
+        player_data = load_data("players.json")
         player_data.append({"name":name, "team" : ""})
-        save_players_data(player_data)
+        save_data("players.json", player_data)
         return "OK"

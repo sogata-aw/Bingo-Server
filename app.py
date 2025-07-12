@@ -11,7 +11,7 @@ connectionSockets.init_sockets(socketio)
 bingoSockets.init_sockets(socketio)
 bingoRoutes.init_routes(app)
 connectionRoute.init_routes(app)
-# debug.init_routes(app, json_data)
+#debug.init_routes(app, json_data)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)

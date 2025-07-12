@@ -3,11 +3,21 @@ from flask_socketio import SocketIO, emit
 
 from utilitaire import *
 
+from validation import send
+
 def init_sockets(socketio):
 
-    socketio.on("update_case")
+    socketio.on("case_click")
     def update_case(data):
-        bingo_data = load_bingo_data()
+        bingo_data = load_data("bingo.json")
 
-        save_bingo_data(bingo_data)
+        for case in bingo_data:
+            if data.get("name") in case["challengers"]:
+                case["challengers"].remove(data["name"])
+            else:
+                case["challengers"].append(data["name"])
+
+        # send(socketio, data["team"], data["challenge"])
+
+        save_data("bingo.json", bingo_data)
         socketio.emit("update_bingo", data, broadcast=True)
