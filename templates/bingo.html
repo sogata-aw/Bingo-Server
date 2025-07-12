@@ -20,31 +20,9 @@
             </div>
 
             <div class="grid">
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
-                <div>Test</div>
+                {% for challenge in bingo %}
+                    <div>{{ challenge.text }}</div>
+                {%  endfor %}
             </div>
 
 
