@@ -24,15 +24,13 @@
                     border-top-right-radius: var(--border-radius);
                     border-bottom-right-radius: var(--border-radius);
                 "
-            >
-            </div>
+            ></div>
 
-            <div class="grid">
+            <div id="bingoGrid" class="grid">
                 {% for challenge in bingo %}
-                    <div>{{ challenge.text }}</div>
-                {%  endfor %}
+                    <button>{{ challenge.text }}</button>
+                {% endfor %}
             </div>
-
 
             <div
                 id="teamBlue"
@@ -42,25 +40,9 @@
                     border-top-left-radius: var(--border-radius);
                     border-bottom-left-radius: var(--border-radius);
                 "
-            >
-            </div>
+            ></div>
 
-            <div id="teamNeutral" class="hidden"> </div>
-
-            <div class="score">
-                <div>
-                    <span class="red">&#9632</span>
-                    <p>0</p>
-                </div>
-                <div>
-                    <span class="grey">&#9632</span>
-                    <p>0</p>
-                </div>
-                <div>
-                    <span class="blue">&#9632</span>
-                    <p>0</p>
-                </div>
-            </div>
         </div>
+        <div id="teamNeutral" class="team-box"></div>
     </body>
 </html>
