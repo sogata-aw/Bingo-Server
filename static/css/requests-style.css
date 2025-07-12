@@ -1,0 +1,41 @@
+body{
+    background-color: #606060;
+}
+
+.grid{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.grid>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid black 2px;
+    padding: 1em;
+    width: 15em;
+    border-radius: 1em;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.refuse, .check{
+    color: #d3d3d3;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.red{
+    background-color: #d74545;
+}
+
+.blue{
+    background-color: #0060f5;
+}

@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/static/css/requests-style.css">
 </head>
 <body>
+    <div id="requests" class="grid">
+        {% for request in requests %}
+            <div class="request {% if request.team == "blu" %} blue {% else %} red {% endif %}">
+                <p>Team : {{ request.team }}</p>
+                <p>Défi : {{ bingo[request.challenge].text }}</p>
+                <div class="button">
+                    <button id="{{ request.challenge }}" class="check" value="{{ request.team }}">Valider</button>
+                    <button id="{{ request.challenge }}" class="refuse" value="{{ request.team }}">Refuser</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 </body>
 </html>
