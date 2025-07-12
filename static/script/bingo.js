@@ -1,16 +1,18 @@
-import {initView} from "../view/bingo-view.js";
-
 const socket = io()
 
-const name = localStorage.getItem('name')
+const name = localStorage.getItem('name');
 
 function connect(name){
-    console.log("yeah")
+    console.log("yeah");
     socket.emit('join', { name: name });
 }
 
 window.onload = () => {
-    const view = initView();
+    const view = {
+        redTeam : teamRed,
+        blueTeam : teamBlue,
+        greyTeam : teamNeutral,
+    };
 
     socket.on('update_connected_users', data => {
         view.greyTeam.classList.add("hidden");

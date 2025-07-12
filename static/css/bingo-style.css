@@ -14,14 +14,24 @@ h2{
     font-weight: normal;
 }
 
-.flex-column-center{
+.team-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    min-height: 20%;
+    --teamColor: grey;
+    background: var(--teamColor);
+}
+.team-box > * {
+    margin: 1em .5em;
 }
 
-.padding-20{
-    padding: 20px;
+#teamNeutral {
+    flex-direction: row;
+
+    min-height: 0;
+    min-width: 20%;
 }
 
 .actions{

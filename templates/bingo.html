@@ -16,7 +16,15 @@
         </header>
 
         <div class="bingo-body">
-            <div class="team1 padding-20 flex-column-center">
+            <div
+                id="teamRed"
+                class="team-box"
+                style="
+                    --teamColor: #b00c0c;
+                    border-top-right-radius: var(--border-radius);
+                    border-bottom-right-radius: var(--border-radius);
+                "
+            >
             </div>
 
             <div class="grid">
@@ -26,10 +34,19 @@
             </div>
 
 
-            <div class="team2 padding-20 flex-column-center">
+            <div
+                id="teamBlue"
+                class="team-box"
+                style="
+                    --teamColor: #063eb8;
+                    border-top-left-radius: var(--border-radius);
+                    border-bottom-left-radius: var(--border-radius);
+                "
+            >
             </div>
-            <div class="neutral padding-20 hidden">
-            </div>
+
+            <div id="teamNeutral" class="hidden"> </div>
+
             <div class="score">
                 <div>
                     <span class="red">&#9632</span>
