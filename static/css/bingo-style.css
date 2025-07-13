@@ -1,3 +1,8 @@
+:root {
+    --teamRed: #b00c0c;
+    --teamBlue: #063eb8;
+}
+
 .bingo-body {
     display: flex;
     align-items: center;
@@ -33,7 +38,7 @@
     margin: .5em 1em;
 }
 
-.actions{
+.actions{ 
     display: flex;
     flex-direction: row;
 
@@ -49,7 +54,8 @@
     border-left: 2px solid #000;
 }
 
-.grid{
+
+.grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -67,16 +73,20 @@
     border: var(--outlineThickness) solid transparent;
     padding: .5em;
 
+    --overlay: linear-gradient(transparent);
     border-radius: var(--border-radius);
-    background: var(--background-dark);
+    background: var(--overlay), var(--background-dark);
+
+    animation-name: animateCounter;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 .grid > *:hover{
-    /* background-color: #c5c5c5; */
-    outline: var(--outlineThickness) solid var(--neon-blue);
-    border: var(--outlineThickness) solid var(--neon-pink);
-    animation-name: outlineHover;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
+    outline-color: var(--neon-blue);
+    border-color: var(--neon-pink);
+    animation-name: outlineHover, animateCounter;
+    animation-duration: 2s, 1s;
 }
 
 .score{
@@ -92,4 +102,19 @@
     font-size: 20px;
     display: flex;
     padding: 10px;
+}
+
+
+@property --animationCounter {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
+}
+@keyframes animateCounter {
+from {
+    --animationCounter: 0;
+}
+to {
+    --animationCounter: 1;
+}
 }

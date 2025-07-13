@@ -1,11 +1,29 @@
 const socket = io();
-const teamsDisplay = {
-    red : teamRed,
-    blu : teamBlue,
-    neutral : teamNeutral,
+const teams = {
+    red : {
+        players: [],
+        element: teamRed,
+        color: "--teamRed"
+    },
+    blu : {
+        players: [],
+        element: teamBlue,
+        color: "--teamBlue"
+    },
+    neutral : {
+        players: [],
+        element: teamNeutral,
+        color: "transparent"
+    }
 };
 
-let bingoData;
+const challengeOverlays = [
+    "--overlay: linear-gradient(transparent);",
+    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamRed)  calc(.5em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
+    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamBlue) calc(.5em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
+    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamRed) calc(.33em + calc(1em * var(--animationCounter))), var(--teamBlue) calc(.66em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
+]
+
 let currentPlayerName;
 
 /** @param {HTMLElement} element */
@@ -18,29 +36,43 @@ function findBingoIndex(element){
 
 //* @param {object} data*/
 function updateConnectedUsers(data){
-    teamsDisplay.red.innerHTML = '<div style="flex-grow: 1;"></div>';
-    teamsDisplay.blu.innerHTML = '<div style="flex-grow: 1;"></div>';
-    teamsDisplay.neutral.innerHTML = '<div style="flex-grow: 1;"></div>';
+    teams.red.element.innerHTML = '<div style="flex-grow: 1;"></div>';
+    teams.blu.element.innerHTML = '<div style="flex-grow: 1;"></div>';
+    teams.neutral.element.innerHTML = '<div style="flex-grow: 1;"></div>';
 
     data.forEach(user => {
         const nameDisplay = document.createElement("p");
         nameDisplay.textContent = user.name;
 
-        if(!Object.keys(teamsDisplay).includes(user.team)) user.team = "neutral";
+        if(!Object.keys(teams).includes(user.team)) user.team = "neutral";
 
-        teamsDisplay[user.team].appendChild(nameDisplay);
+        teams[user.team].element.appendChild(nameDisplay);
+        teams[user.team].players.push(user.name);
 
     })
 
-    teamsDisplay.red.innerHTML += '<div style="flex-grow: 1;"></div>';
-    teamsDisplay.blu.innerHTML += '<div style="flex-grow: 1;"></div>';
-    teamsDisplay.neutral.innerHTML += '<div style="flex-grow: 1;"></div>';
+    teams.red.element.innerHTML += '<div style="flex-grow: 1;"></div>';
+    teams.blu.element.innerHTML += '<div style="flex-grow: 1;"></div>';
+    teams.neutral.element.innerHTML += '<div style="flex-grow: 1;"></div>';
 }
 
 //* @param {object} data*/
 function updateBingoGrid(data){
-    console.log(data);
-    bingoData = data;
+    for(let i = 0; i < data.length; i++){
+        if(data[i].checkedBy){
+            const teamColor = `var(${teams[data[i].checkedBy].color})`;
+            bingoGrid.children[i].style = `--overlay: linear-gradient(color-mix(in oklab, ${teamColor} 50%, transparent));`;
+        }else if(data[i].challengers.length){
+            let selectedOverlay = 0;
+            for(const challenger of data[i].challengers){
+                if(teams.red.players.includes(challenger)) selectedOverlay |= 1;
+                else if(teams.blu.players.includes(challenger)) selectedOverlay |= 2;
+            }
+            bingoGrid.children[i].style = challengeOverlays[selectedOverlay];
+        }else{
+            bingoGrid.children[i].style = "--overlay: linear-gradient(transparent);";
+        }
+    }
 }
 
 window.onload = () => {
