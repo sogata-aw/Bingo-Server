@@ -18,7 +18,7 @@ body{
     border-radius: 1em;
 }
 
-.button{
+.buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,6 +36,6 @@ body{
     background-color: #d74545;
 }
 
-.blue{
+.blu{
     background-color: #0060f5;
 }

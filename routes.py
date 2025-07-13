@@ -19,7 +19,7 @@ def init_routes(app: Flask):
 
     @app.route('/requests.html')
     def reqq():
-        return render_template('requests.html')
+        return render_template('requests.html', requests=bdd.challengesRequests, bingo=bdd.bingo)
 
     @app.errorhandler(401)
     def custom_401(_):

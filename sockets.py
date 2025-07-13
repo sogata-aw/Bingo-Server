@@ -15,6 +15,14 @@ class TeamRequest(BaseModel):
     name: str
     team: bdd.TeamNames
 
+class ChallengeRequest(BaseModel):
+    index: int
+    team: bdd.TeamNames
+
+class CheckChallenge(BaseModel):
+    index: int
+    team: bdd.TeamNames
+
 connected_users : list[str] = []
 
 def emitConnectedUsers():
@@ -36,7 +44,11 @@ def init_sockets(socketio: SocketIO):
         else:
             challenge.challengers.append(data.name)
 
-        bdd.saveBingo
+        bdd.saveBingo()
+
+        bdd.challengesRequests.append(bdd.ChallengeRequest(index=data.index, team=bdd.players[data.name]))
+        emit("update_requests", bdd.serializeChallengeRequests(), broadcast=True)
+
         emit("update_bingo", bdd.serializeBingo(), broadcast=True)
 
     @socketio.on('join')
@@ -57,7 +69,7 @@ def init_sockets(socketio: SocketIO):
         connected_users.remove(data.name)
         emitConnectedUsers()
 
-    socketio.on("update_team")
+    @socketio.on("update_team")
     def update_team(data):
         data = TeamRequest.model_validate(data)
         playerData = bdd.players.get(data.name)
@@ -68,3 +80,26 @@ def init_sockets(socketio: SocketIO):
 
         bdd.savePlayers()
         emitConnectedUsers()
+
+    @socketio.on('add_request')
+    def add_requests(data):
+        data = ChallengeRequest.model_validate(data)
+        if not bdd.findRequest(data.index, data.team):
+            bdd.challengesRequests.append(bdd.ChallengeRequest(index=data.index, team=data.team))
+            emit("update_requests", bdd.serializeChallengeRequests(), broadcast=True)
+
+    @socketio.on('check_challenge')
+    def check_challenge(data):
+        data = CheckChallenge.model_validate(data)
+        bdd.bingo[data.index].checkedBy = data.team
+
+        bdd.saveBingo()
+
+        bdd.removeRequest(data.index, data.team)
+        emit('update_requests', bdd.serializeChallengeRequests(), broadcast=True)
+
+    @socketio.on('refuse_challenge')
+    def check_challenge(data):
+        data = CheckChallenge.model_validate(data)
+        bdd.removeRequest(data.index, data.team)
+        emit('update_requests', bdd.serializeChallengeRequests(), broadcast=True)

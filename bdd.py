@@ -9,9 +9,13 @@ class BingoChallenge(BaseModel):
     challengers: list[str] = []
     checkedBy: TeamNames = ""
 
+class ChallengeRequest(BaseModel):
+    team: str
+    index: int
 
 players: dict[str, str] = {}
 bingo: list[BingoChallenge] = []
+challengesRequests: list[ChallengeRequest] = []
 
 
 def reloadPlayers():
@@ -32,7 +36,27 @@ def reloadBingo():
 
 def saveBingo():
     with open("./data/bingo.json", 'w', encoding="utf-8") as json_file:
-        json.dump(bingo, json_file, indent=4)
+        json.dump(serializeBingo(), json_file, indent=4)
 
 def serializeBingo() -> list[dict]:
     return [ b.model_dump() for b in bingo ]
+
+def serializeChallengeRequests() -> list[dict]:
+    result = [c.model_dump() for c in challengesRequests ]
+
+    for r in result:
+        r["text"] = bingo[r["index"]].text
+
+    return result
+
+def findRequest(index : int, team : str) -> ChallengeRequest:
+    result = None
+    for request in challengesRequests:
+        if request.index == index and request.team == team:
+            result = request
+    return result
+
+def removeRequest(index : int, team : str) -> None:
+    for request in challengesRequests:
+        if request.index == index and request.team == team:
+            challengesRequests.remove(request)
