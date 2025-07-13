@@ -1,3 +1,4 @@
+from flask import request
 from flask_socketio import SocketIO, emit
 from pydantic import BaseModel
 
@@ -56,6 +57,7 @@ def init_sockets(socketio: SocketIO):
             return
         connected_users.append(data.name)
         emitConnectedUsers()
+        emit("update_bingo", bdd.bingo, to=request.sid)
 
     @socketio.on('leave')
     def disconnect(data):
