@@ -46,9 +46,6 @@ def init_sockets(socketio: SocketIO):
 
         bdd.saveBingo()
 
-        bdd.challengesRequests.append(bdd.ChallengeRequest(index=data.index, team=bdd.players[data.name]))
-        emit("update_requests", bdd.serializeChallengeRequests(), broadcast=True)
-
         emit("update_bingo", bdd.serializeBingo(), broadcast=True)
 
     @socketio.on('join')
