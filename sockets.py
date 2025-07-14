@@ -48,6 +48,12 @@ def init_sockets(socketio: SocketIO):
     @socketio.on("reload_players")
     def reloadPlayers(_):
         bdd.reloadPlayers()
+        print("Players reloaded")
+
+    @socketio.on("reload_bingo")
+    def reloadBingo(_):
+        bdd.reloadBingo()
+        print("Bingo reloaded")
 
     @socketio.on('join')
     def connect(data):
@@ -100,6 +106,7 @@ def init_sockets(socketio: SocketIO):
 
         bdd.removeRequest(data.index, data.team)
         emit('update_requests', bdd.serializeChallengeRequests(), broadcast=True)
+        emit("update_bingo", bdd.serializeBingo(), broadcast=True)
 
     @socketio.on('refuse_challenge')
     def check_challenge(data):

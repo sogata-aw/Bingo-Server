@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin</title>
     <style>
         body{
             height: 100vh;
@@ -12,6 +12,10 @@
             align-items: center;
 
             background-color: slategray;
+        }
+
+        svg:hover{
+            color: royalblue;
         }
     </style>
 </head>
@@ -30,11 +34,13 @@
     const socket = io();
 
     players.addEventListener('click', () => {
-        socket.emit('refresh_players', {});
+        socket.emit('reload_players', {});
+        alert("Joueurs rechargés");
     });
 
     bingo.addEventListener('click', () => {
-        socket.emit('refresh_bingo', {});
+        socket.emit('reload_bingo', {});
+        alert("Bingo rechargés");
     });
 </script>
 </html>

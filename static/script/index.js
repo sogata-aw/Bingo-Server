@@ -12,6 +12,9 @@ window.onload = () => {
         if(loginResponse === "INVALID"){
             alert("Nom d'utilisateur non reconnu");
             return;
+        }else if(loginResponse === "LOGGED IN"){
+            alert("Cet utilisateur est déjà connecté");
+            return;
         }
 
         setToLocalStorage(loginName.value);

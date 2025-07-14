@@ -1,6 +1,6 @@
 from flask import render_template, Flask, send_file, send_from_directory, Response, abort, request
 
-import bdd
+import bdd, sockets
 
 
 def init_routes(app: Flask):
@@ -29,6 +29,8 @@ def init_routes(app: Flask):
     def login(name: str):
         if not bdd.players.get(name):
             return "INVALID"
+        elif name in sockets.connected_users:
+            return "LOGGED IN"
         return 'OK'
 
     @app.route('/admin')
