@@ -99,20 +99,20 @@ window.onload = () => {
                 socket.emit("case_click", {name: currentPlayerName, index: ii});
                 return;
             }
-
+            
+            challengeDialogText.textContent = bingo[ii].text;
+            challengeDialog.challengeIndex = ii;
             challengeDialog.showModal();
         }
     });
 
-    challangeDialogClose.addEventListener("click", () => {challengeDialog.close();})
-    challengeDialogUnchallenge.addEventListener("click", e => {
-        const ii = findBingoIndex(e.target);
-        if(ii != undefined) socket.emit("case_click", {name: currentPlayerName, index: ii});
+    challengeDialogClose.addEventListener("click", () => {challengeDialog.close();})
+    challengeDialogUnchallenge.addEventListener("click", () => {
+        socket.emit("case_click", {name: currentPlayerName, index: challengeDialog.challengeIndex});
         challengeDialog.close();
     })
-    challangeDialogClose.addEventListener("click", (e) => {
-        const ii = findBingoIndex(e.target);
-        if(ii != undefined) socket.emit("add_request", {name: currentPlayerName, index: ii});
+    challengeDialogCheck.addEventListener("click", () => {
+        socket.emit("add_request", {name: currentPlayerName, index: challengeDialog.challengeIndex});
         challengeDialog.close();
     })
 
