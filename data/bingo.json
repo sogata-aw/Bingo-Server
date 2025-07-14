@@ -1,6 +1,6 @@
 [
     {
-        "text": "Battre le seul boss apparu dans les 3 jeux (dans n'importe lequel)",
+        "text": "Gagner avec une équipe composé uniquement de sniper",
         "challengers": [
             "Soga",
             "Flofrost"
@@ -8,43 +8,29 @@
         "checkedBy": ""
     },
     {
-        "text": "Obtenir le titre N\u00b0 1 en super saut",
+        "text": "Réaliser une élimination tout seul ou 3 en équipe",
         "challengers": [
             "Soga"
         ],
         "checkedBy": ""
     },
     {
-        "text": "Battre le boss final de l'Octo Expansion",
+        "text": "Garder Chapeaux de roue (Opening gambit) pendant 1min30",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Am\u00e9liorer d'une \u00e9toile 3 \u00e9quipements",
+        "text": "Écouter octoling RendezVous dans le hall",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Dessiner un Inkling avec de l'encre",
+        "text": "Obtenir les 3 bonus d'un équipement",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Monter 5 armes 1 \u00e9toile",
-        "challengers": [
-            "Flofrost"
-        ],
-        "checkedBy": ""
-    },
-    {
-        "text": "Obtenir le titre N\u00b0 1 au combat",
-        "challengers": [
-            "Moms"
-        ],
-        "checkedBy": ""
-    },
-    {
-        "text": "Faire un match sur la derni\u00e8re map de tout Splatoon",
+        "text": "Gagner avec plus de 65% de la map encré en guerre de territoire",
         "challengers": [
             "Flofrost",
             "Soga"
@@ -52,17 +38,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Jouer sur une map qui \u00e9tait en travaux dans un ancien opus",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Vaincre 5 T\u00eate-de-pneu",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Trouver 3 personnes qui jouent \u00e0 Splatoon hors serveur Nintendo",
+        "text": "Récupérer 125 oeufs en une partie de salmon run",
         "challengers": [
             "Moms",
             "Soga"
@@ -70,21 +46,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Speedrun de la tour de l'ordre (d\u00e9but ~30min)",
-        "challengers": [
-            "Flofrost"
-        ],
-        "checkedBy": ""
-    },
-    {
-        "text": "Quizz sur l\u2019univers du jeu (vers 15h - 20/30min)",
-        "challengers": [
-            "Soga"
-        ],
-        "checkedBy": ""
-    },
-    {
-        "text": "Faire un K.O. en match Anarchie",
+        "text": "Vaincre 15 Tête-de-pneu",
         "challengers": [
             "Flofrost",
             "Soga"
@@ -92,61 +54,104 @@
         "checkedBy": ""
     },
     {
-        "text": "Photo contest ? (avant 15h)",
-        "challengers": [],
-        "checkedBy": "blu"
-    },
-    {
-        "text": "Finir le tutoriel de l\u2019un des Splatoon",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Jouer sur une map introduite dans Splatoon 2",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Gagner un match en jouant le D\u00e9tubeur modifi\u00e9",
+        "text": "Réussir à lancer un match en rang X",
         "challengers": [
             "Soga"
         ],
         "checkedBy": ""
     },
     {
-        "text": "R\u00e9ussir \u00e0 lancer un match en rang X",
+        "text": "Battre les tridenfers dans le mode histoire",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Battre le boss final du 3 en moins de 30min (plus peut-\u00eatre)",
+        "text": "Finir la tour de l'ordre en low hack avec le lanceur octaling",
+        "challengers": [
+            "Moms",
+            "Soga"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "Faire un kill avec la fontaine",
+        "challengers": [
+            "Flofrost",
+            "Soga"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "Battre le boss final en moins de 30min",
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "20 kill avec moins de 5 morts en arnarchie ou moins de 3 morts en turf",
+        "challengers": [
+            "Flofrost",
+            "Soga"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "Faire la mission n°6 du secteur 1 en moins d'1min30",
+        "challengers": [],
+        "checkedBy": "blu"
+    },
+    {
+        "text": "Utiliser 8 spéciaux en une partie",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Faire la mission n\u00b012 du secteur 6 en moins d'1min20 sans armes",
+        "text": "Obtenir un total de 30 titres dorées ",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Vaincre Cannon parall\u00e8le dans la Tour de l'Ordre",
+        "text": "Monter 5 armes 1 étoiles",
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "Gagner une partie avec la team entière en équipement héroïque",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Gagner une partie avec la team enti\u00e8re en \u00e9quipement h\u00e9ro\u00efque",
+        "text": "Gagner 3 matchs avec une équipe composé uniquement d'armes exclusives au 3 (Trisperceur, Éclatana, Lanceur Spatial,...)",
+        "challengers": [],
+        "checkedBy": ""
+    },
+    {
+        "text": "Gagner 3 matchs cartes et territoires",
+        "challengers": [],
+        "checkedBy": ""
+    },
+    {
+        "text": "Colorer la page easter egg de google en entier",
+        "challengers": [],
+        "checkedBy": ""
+    },
+    {
+        "text": "Finir le niveau secret d'Alterna",
         "challengers": [
             "Soga"
         ],
         "checkedBy": "red"
     },
     {
-        "text": "Terminer un niveau Octaling dans le mode histoire du 2",
+        "text": "Gagner 3 matchs anarchies en faisant des K.O.",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Gagner avec une \u00e9quipe compos\u00e9e uniquement de snipers",
+        "text": "Faire coucou aux idols des 3 jeux",
         "challengers": [],
         "checkedBy": ""
     }

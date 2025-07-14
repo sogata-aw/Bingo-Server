@@ -105,12 +105,12 @@ window.onload = () => {
     });
 
     challangeDialogClose.addEventListener("click", () => {challengeDialog.close();})
-    challangeDialogUnchallenge.addEventListener("click", e => {
+    challengeDialogUnchallenge.addEventListener("click", e => {
         const ii = findBingoIndex(e.target);
         if(ii != undefined) socket.emit("case_click", {name: currentPlayerName, index: ii});
         challengeDialog.close();
     })
-    challangeDialogClose.addEventListener("click", () => {
+    challangeDialogClose.addEventListener("click", (e) => {
         const ii = findBingoIndex(e.target);
         if(ii != undefined) socket.emit("add_request", {name: currentPlayerName, index: ii});
         challengeDialog.close();
