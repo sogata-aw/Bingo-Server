@@ -81,15 +81,25 @@ function updateBingoGrid(){
     }
 }
 
+// data = {index, team}
+//* @param {object} data*/
+function notificationPopup(data){
+    notificationElem.innerHTML = `Le défi <b>${bingo[data.index].text}</b> à été complété par l'équipe <b>${data.team == "red" ? "Rouge" : "Bleue"}</b>`;
+    notificationElem.style = `--n-color: var(--${data.team == "red" ? "teamRed" : "teamBlue"})`;
+    notificationElem.classList.remove("notification");
+    setTimeout(()=>{notificationElem.classList.add("notification");}, 10);
+}
+
 window.onload = () => {
     currentPlayerName = localStorage.getItem('name');
     if(!currentPlayerName){
-        alert("no player name in local storage");
+        window.location = "/";
         return;
     }
 
     socket.on('update_connected_users', updateConnectedUsers);
     socket.on('update_bingo', d => {bingo = d; updateBingoGrid();});
+    socket.on('notification', notificationPopup);
 
     for(const child of bingoGrid.children) child.addEventListener("click", e => {
         const ii = findBingoIndex(e.target);
@@ -105,7 +115,9 @@ window.onload = () => {
         }
     });
 
-    challengeDialogClose.addEventListener("click", () => {challengeDialog.close();})
+    challengeDialogClose.addEventListener("click", () => {
+        challengeDialog.close();
+    })
     challengeDialogUnchallenge.addEventListener("click", () => {
         socket.emit("case_click", {name: currentPlayerName, index: challengeDialog.challengeIndex});
         challengeDialog.close();
@@ -114,6 +126,7 @@ window.onload = () => {
         socket.emit("add_request", {name: currentPlayerName, index: challengeDialog.challengeIndex});
         challengeDialog.close();
     })
+
 
     socket.emit('join', { name: currentPlayerName });
 }

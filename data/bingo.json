@@ -1,6 +1,6 @@
 [
     {
-        "text": "Gagner avec une équipe composé uniquement de sniper",
+        "text": "Gagner avec une \u00e9quipe compos\u00e9 uniquement de sniper",
         "challengers": [
             "Soga",
             "Flofrost"
@@ -8,7 +8,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Réaliser une élimination tout seul ou 3 en équipe",
+        "text": "R\u00e9aliser une \u00e9limination tout seul ou 3 en \u00e9quipe",
         "challengers": [
             "Soga"
         ],
@@ -20,17 +20,17 @@
         "checkedBy": ""
     },
     {
-        "text": "Écouter octoling RendezVous dans le hall",
+        "text": "\u00c9couter octoling RendezVous dans le hall",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Obtenir les 3 bonus d'un équipement",
+        "text": "Obtenir les 3 bonus d'un \u00e9quipement",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Gagner avec plus de 65% de la map encré en guerre de territoire",
+        "text": "Gagner avec plus de 65% de la map encr\u00e9 en guerre de territoire",
         "challengers": [
             "Flofrost",
             "Soga"
@@ -38,7 +38,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Récupérer 125 oeufs en une partie de salmon run",
+        "text": "R\u00e9cup\u00e9rer 125 oeufs en une partie de salmon run",
         "challengers": [
             "Moms",
             "Soga"
@@ -46,7 +46,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Vaincre 15 Tête-de-pneu",
+        "text": "Vaincre 15 T\u00eate-de-pneu",
         "challengers": [
             "Flofrost",
             "Soga"
@@ -54,7 +54,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Réussir à lancer un match en rang X",
+        "text": "R\u00e9ussir \u00e0 lancer un match en rang X",
         "challengers": [
             "Soga"
         ],
@@ -83,9 +83,7 @@
     },
     {
         "text": "Battre le boss final en moins de 30min",
-        "challengers": [
-            "Soga"
-        ],
+        "challengers": [],
         "checkedBy": ""
     },
     {
@@ -97,34 +95,32 @@
         "checkedBy": ""
     },
     {
-        "text": "Faire la mission n°6 du secteur 1 en moins d'1min30",
+        "text": "Faire la mission n\u00b06 du secteur 1 en moins d'1min30",
         "challengers": [],
         "checkedBy": "blu"
     },
     {
-        "text": "Utiliser 8 spéciaux en une partie",
+        "text": "Utiliser 8 sp\u00e9ciaux en une partie",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Obtenir un total de 30 titres dorées ",
+        "text": "Obtenir un total de 30 titres dor\u00e9es ",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Monter 5 armes 1 étoiles",
-        "challengers": [
-            "Soga"
-        ],
-        "checkedBy": ""
-    },
-    {
-        "text": "Gagner une partie avec la team entière en équipement héroïque",
+        "text": "Monter 5 armes 1 \u00e9toiles",
         "challengers": [],
         "checkedBy": ""
     },
     {
-        "text": "Gagner 3 matchs avec une équipe composé uniquement d'armes exclusives au 3 (Trisperceur, Éclatana, Lanceur Spatial,...)",
+        "text": "Gagner une partie avec la team enti\u00e8re en \u00e9quipement h\u00e9ro\u00efque",
+        "challengers": [],
+        "checkedBy": ""
+    },
+    {
+        "text": "Gagner 3 matchs avec une \u00e9quipe compos\u00e9 uniquement d'armes exclusives au 3 (Trisperceur, \u00c9clatana, Lanceur Spatial,...)",
         "challengers": [],
         "checkedBy": ""
     },
