@@ -57,7 +57,7 @@ def init_sockets(socketio: SocketIO):
             return
         connected_users.append(data.name)
         emitConnectedUsers()
-        emit("update_bingo", bdd.bingo, to=request.sid)
+        emit("update_bingo", bdd.serializeBingo(), to=request.sid)
 
     @socketio.on('leave')
     def disconnect(data):

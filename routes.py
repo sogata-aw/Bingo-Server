@@ -27,20 +27,15 @@ def init_routes(app: Flask):
 
     @app.route('/login/<name>')
     def login(name: str):
-        if not request.authorization :
-            if not bdd.players.get(name):
-                return "INVALID"
-            elif name == "Soga":
-                abort(401)
-            else:
-                return "OK"
-        else:
-            if request.authorization.username == "Soga" and request.authorization.password == "bingo!":
-                return "OK"
-            abort(401)
+        if not bdd.players.get(name):
+            return "INVALID"
+        return 'OK'
 
-    @app.route('/login/create/<name>')
-    def create(name: str):
-        bdd.players[name] = ""
-        bdd.savePlayers()
-        return "OK"
+    @app.route('/admin')
+    def admin():
+        if not request.authorization :
+            abort(401)
+        elif request.authorization.username == "Soga" and request.authorization.password == "bingo!":
+            return render_template('admin.html')
+        else:
+            abort(403)
