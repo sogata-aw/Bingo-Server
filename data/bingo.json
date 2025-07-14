@@ -1,129 +1,153 @@
 [
     {
         "text": "Battre le seul boss apparu dans les 3 jeux (dans n'importe lequel)",
-        "checkedBy": "",
         "challengers": [
-            "Soga"
-        ]
+            "Soga",
+            "Flofrost"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Obtenir le titre N\u00b0 1 en super saut",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Battre le boss final de l'Octo Expansion",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Am\u00e9liorer d'une \u00e9toile 3 \u00e9quipements",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Dessiner un Inkling avec de l'encre",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Monter 5 armes 1 \u00e9toile",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Flofrost"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Obtenir le titre N\u00b0 1 au combat",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Moms"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Faire un match sur la derni\u00e8re map de tout Splatoon",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Flofrost",
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Jouer sur une map qui \u00e9tait en travaux dans un ancien opus",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Vaincre 5 T\u00eate-de-pneu",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Trouver 3 personnes qui jouent \u00e0 Splatoon hors serveur Nintendo",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Moms",
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Speedrun de la tour de l'ordre (d\u00e9but ~30min)",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Flofrost"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Quizz sur l\u2019univers du jeu (vers 15h - 20/30min)",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Faire un K.O. en match Anarchie",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Flofrost",
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Photo contest ? (avant 15h)",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": "blu"
     },
     {
         "text": "Finir le tutoriel de l\u2019un des Splatoon",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Jouer sur une map introduite dans Splatoon 2",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Gagner un match en jouant le D\u00e9tubeur modifi\u00e9",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "R\u00e9ussir \u00e0 lancer un match en rang X",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Battre le boss final du 3 en moins de 30min (plus peut-\u00eatre)",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Faire la mission n\u00b012 du secteur 6 en moins d'1min20 sans armes",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Vaincre Cannon parall\u00e8le dans la Tour de l'Ordre",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Gagner une partie avec la team enti\u00e8re en \u00e9quipement h\u00e9ro\u00efque",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [
+            "Soga"
+        ],
+        "checkedBy": "red"
     },
     {
         "text": "Terminer un niveau Octaling dans le mode histoire du 2",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     },
     {
         "text": "Gagner avec une \u00e9quipe compos\u00e9e uniquement de snipers",
-        "checkedBy": "",
-        "challengers": []
+        "challengers": [],
+        "checkedBy": ""
     }
 ]

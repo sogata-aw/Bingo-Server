@@ -6,7 +6,7 @@
 .bingo-body {
     display: flex;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 
@@ -38,30 +38,13 @@
     margin: .5em 1em;
 }
 
-.actions{ 
-    display: flex;
-    flex-direction: row;
-
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    gap: 30px;
-
-    border-bottom : 2px solid #000;
-    border-right: 2px solid #000;
-    border-left: 2px solid #000;
-}
-
-
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
     align-content: center;
     flex-grow: 1;
-    height: 70%;
+    height: 80%;
 
     margin: auto 7em;
     text-align: center;
@@ -70,23 +53,27 @@
     align-content: center;
 
     margin: .3em;
-    border: var(--outlineThickness) solid transparent;
-    padding: .5em;
+    border: var(--outlineThickness) solid var(--background-dark);
+    padding: .5em 1em;
 
+    --lg-angle: 150deg;
+    --lg-length: 5em;
+    --lg-opacity: 40%;
+    
     --overlay: linear-gradient(transparent);
     border-radius: var(--border-radius);
     background: var(--overlay), var(--background-dark);
+    text-shadow: black .2em .2em .1em;
 
     animation-name: animateCounter;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-.grid > *:hover{
+.grid > *:hover:not(:disabled), .grid > *:active:not(:disabled){
     outline-color: var(--neon-blue);
     border-color: var(--neon-pink);
     animation-name: outlineHover, animateCounter;
-    animation-duration: 2s, 1s;
 }
 
 .score{
@@ -104,6 +91,16 @@
     padding: 10px;
 }
 
+dialog:modal {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: auto;
+    background: transparent;
+}
+dialog > * { margin: auto; }
+dialog > * > *:nth-child(2) > * { margin: 0em 1em; }
 
 @property --animationCounter {
     syntax: "<number>";

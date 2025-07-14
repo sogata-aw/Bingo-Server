@@ -69,12 +69,13 @@ input[type=submit], input[type=button], button {
     padding: .2em .5em;
     font-size: 110%;
     border-radius: var(--border-radius);
+    border: var(--outlineThickness) solid transparent;
     background: var(--purple);
 }
 
-input:hover, button:hover, input:active, button:active {
+input:hover:not(:disabled), button:hover:not(:disabled), input:active:not(:disabled), button:active:not(:disabled) {
     outline: var(--outlineThickness) solid var(--neon-blue);
-    border: var(--outlineThickness) solid var(--neon-pink);
+    border-color: var(--neon-pink);
     animation-name: outlineHover;
     animation-iteration-count: infinite;
     animation-duration: 2s;

@@ -19,12 +19,13 @@ const teams = {
 
 const challengeOverlays = [
     "--overlay: linear-gradient(transparent);",
-    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamRed)  calc(.5em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
-    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamBlue) calc(.5em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
-    "--overlay: repeating-linear-gradient(transparent calc(0em + calc(1em * var(--animationCounter))), var(--teamRed) calc(.33em + calc(1em * var(--animationCounter))), var(--teamBlue) calc(.66em + calc(1em * var(--animationCounter))), transparent calc(1em + calc(1em * var(--animationCounter))))",
+    "--overlay: repeating-linear-gradient(in oklab var(--lg-angle), transparent calc(0em + calc(var(--lg-length) * var(--animationCounter))), color-mix(in oklab, var(--teamRed)  var(--lg-opacity), transparent) calc(calc(var(--lg-length) / 2) + calc(var(--lg-length) * var(--animationCounter))), transparent calc(var(--lg-length) + calc(var(--lg-length) * var(--animationCounter))));",
+    "--overlay: repeating-linear-gradient(in oklab var(--lg-angle), transparent calc(0em + calc(var(--lg-length) * var(--animationCounter))), color-mix(in oklab, var(--teamBlue) var(--lg-opacity), transparent) calc(calc(var(--lg-length) / 2) + calc(var(--lg-length) * var(--animationCounter))), transparent calc(var(--lg-length) + calc(var(--lg-length) * var(--animationCounter))));",
+    "--overlay: repeating-linear-gradient(in oklab var(--lg-angle), transparent calc(0em + calc(var(--lg-length) * var(--animationCounter))), color-mix(in oklab, var(--teamRed) var(--lg-opacity), transparent) calc(calc(var(--lg-length) / 3) + calc(var(--lg-length) * var(--animationCounter))), color-mix(in oklab, var(--teamBlue) var(--lg-opacity), transparent) calc(calc(var(--lg-length) / 1.66) + calc(var(--lg-length) * var(--animationCounter))), transparent calc(var(--lg-length) + calc(var(--lg-length) * var(--animationCounter))));",
 ]
 
 let currentPlayerName;
+let bingo = [];
 
 /** @param {HTMLElement} element */
 function findBingoIndex(element){
@@ -54,21 +55,27 @@ function updateConnectedUsers(data){
     teams.red.element.innerHTML += '<div style="flex-grow: 1;"></div>';
     teams.blu.element.innerHTML += '<div style="flex-grow: 1;"></div>';
     teams.neutral.element.innerHTML += '<div style="flex-grow: 1;"></div>';
+
+    updateBingoGrid();
 }
 
 //* @param {object} data*/
-function updateBingoGrid(data){
-    for(let i = 0; i < data.length; i++){
-        if(data[i].checkedBy){
-            const teamColor = `var(${teams[data[i].checkedBy].color})`;
+function updateBingoGrid(){
+    for(let i = 0; i < bingo.length; i++){
+        if(bingo[i].checkedBy){
+            const teamColor = `var(${teams[bingo[i].checkedBy].color})`;
             bingoGrid.children[i].style = `--overlay: linear-gradient(color-mix(in oklab, ${teamColor} 50%, transparent));`;
-        }else if(data[i].challengers.length){
+            bingoGrid.children[i].disabled = true;
+        }else if(bingo[i].challengers.length){
             let selectedOverlay = 0;
-            for(const challenger of data[i].challengers){
+            let selectedOpacity = "";
+            for(const challenger of bingo[i].challengers){
+                if(challenger == currentPlayerName) selectedOpacity = "--lg-opacity: 100%;";
                 if(teams.red.players.includes(challenger)) selectedOverlay |= 1;
                 else if(teams.blu.players.includes(challenger)) selectedOverlay |= 2;
             }
-            bingoGrid.children[i].style = challengeOverlays[selectedOverlay];
+            console.log(selectedOpacity);
+            bingoGrid.children[i].style = selectedOpacity + challengeOverlays[selectedOverlay];
         }else{
             bingoGrid.children[i].style = "--overlay: linear-gradient(transparent);";
         }
@@ -83,15 +90,31 @@ window.onload = () => {
     }
 
     socket.on('update_connected_users', updateConnectedUsers);
-    socket.on('update_bingo', updateBingoGrid);
+    socket.on('update_bingo', d => {bingo = d; updateBingoGrid();});
 
-    for(const child of bingoGrid.children)
-        child.addEventListener("click", e => {
-            const ii = findBingoIndex(e.target);
-            if(ii != undefined){
+    for(const child of bingoGrid.children) child.addEventListener("click", e => {
+        const ii = findBingoIndex(e.target);
+        if(ii != undefined){
+            if(!bingo[ii].challengers.includes(currentPlayerName)){
                 socket.emit("case_click", {name: currentPlayerName, index: ii});
+                return;
             }
-        });
+
+            challengeDialog.showModal();
+        }
+    });
+
+    challangeDialogClose.addEventListener("click", () => {challengeDialog.close();})
+    challangeDialogUnchallenge.addEventListener("click", e => {
+        const ii = findBingoIndex(e.target);
+        if(ii != undefined) socket.emit("case_click", {name: currentPlayerName, index: ii});
+        challengeDialog.close();
+    })
+    challangeDialogClose.addEventListener("click", () => {
+        const ii = findBingoIndex(e.target);
+        if(ii != undefined) socket.emit("add_request", {name: currentPlayerName, index: ii});
+        challengeDialog.close();
+    })
 
     socket.emit('join', { name: currentPlayerName });
 }

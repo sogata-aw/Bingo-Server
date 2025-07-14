@@ -49,12 +49,11 @@ def serializeChallengeRequests() -> list[dict]:
 
     return result
 
-def findRequest(index : int, team : str) -> ChallengeRequest:
-    result = None
+def findRequest(index : int, team : str) -> ChallengeRequest | None:
     for request in challengesRequests:
         if request.index == index and request.team == team:
-            result = request
-    return result
+            return request
+    return None
 
 def removeRequest(index : int, team : str) -> None:
     for request in challengesRequests:
