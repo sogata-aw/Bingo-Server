@@ -74,7 +74,6 @@ function updateBingoGrid(){
                 if(teams.red.players.includes(challenger)) selectedOverlay |= 1;
                 else if(teams.blu.players.includes(challenger)) selectedOverlay |= 2;
             }
-            console.log(selectedOpacity);
             bingoGrid.children[i].style = selectedOpacity + challengeOverlays[selectedOverlay];
         }else{
             bingoGrid.children[i].style = "--overlay: linear-gradient(transparent);";
