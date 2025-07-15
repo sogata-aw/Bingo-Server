@@ -5,7 +5,7 @@
             "Soga",
             "Flofrost"
         ],
-        "checkedBy": ""
+        "checkedBy": "red"
     },
     {
         "text": "R\u00e9aliser une \u00e9limination tout seul ou 3 en \u00e9quipe",
@@ -120,7 +120,7 @@
         "checkedBy": ""
     },
     {
-        "text": "Gagner 3 matchs avec une \u00e9quipe compos\u00e9 uniquement d'armes exclusives au 3 (Trisperceur, \u00c9clatana, Lanceur Spatial,...)",
+        "text": "Gagner 3 matchs avec une \u00e9quipe compos\u00e9 uniquement d'armes exclusives au 3",
         "challengers": [],
         "checkedBy": ""
     },
