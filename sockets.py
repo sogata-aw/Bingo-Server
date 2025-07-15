@@ -107,6 +107,7 @@ def init_sockets(socketio: SocketIO):
         bdd.removeRequest(data.index, data.team)
         emit('update_requests', bdd.serializeChallengeRequests(), broadcast=True)
         emit("update_bingo", bdd.serializeBingo(), broadcast=True)
+        emit("notification", {"index" : data.index, "team" : data.team} ,broadcast=True)
 
     @socketio.on('refuse_challenge')
     def check_challenge(data):
