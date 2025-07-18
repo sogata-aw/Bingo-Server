@@ -2,153 +2,190 @@
     {
         "text": "Gagner avec une \u00e9quipe compos\u00e9 uniquement de sniper",
         "challengers": [
-            "Soga",
-            "Flofrost"
+            "Luna",
+            "Nolia"
         ],
-        "checkedBy": "red"
+        "checkedBy": "blu"
     },
     {
         "text": "R\u00e9aliser une \u00e9limination tout seul ou 3 en \u00e9quipe",
         "challengers": [
-            "Soga"
+            "Flofrost",
+            "Luna"
         ],
         "checkedBy": ""
     },
     {
         "text": "Garder Chapeaux de roue (Opening gambit) pendant 1min30",
-        "challengers": [],
+        "challengers": [
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "\u00c9couter octoling RendezVous dans le hall",
-        "challengers": [],
+        "challengers": [
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Obtenir les 3 bonus d'un \u00e9quipement",
-        "challengers": [],
+        "challengers": [
+            "Nolia",
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Gagner avec plus de 65% de la map encr\u00e9 en guerre de territoire",
         "challengers": [
-            "Flofrost",
-            "Soga"
+            "Nolia",
+            "Luna"
         ],
         "checkedBy": ""
     },
     {
         "text": "R\u00e9cup\u00e9rer 125 oeufs en une partie de salmon run",
         "challengers": [
-            "Moms",
             "Soga"
         ],
-        "checkedBy": ""
+        "checkedBy": "red"
     },
     {
         "text": "Vaincre 15 T\u00eate-de-pneu",
         "challengers": [
-            "Flofrost",
-            "Soga"
+            "Luna",
+            "Nolia"
         ],
         "checkedBy": ""
     },
     {
         "text": "R\u00e9ussir \u00e0 lancer un match en rang X",
         "challengers": [
-            "Soga"
+            "Luna"
         ],
-        "checkedBy": ""
+        "checkedBy": "red"
     },
     {
         "text": "Battre les tridenfers dans le mode histoire",
-        "challengers": [],
+        "challengers": [
+            "Nolia",
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Finir la tour de l'ordre en low hack avec le lanceur octaling",
         "challengers": [
-            "Moms",
-            "Soga"
+            "Luna"
         ],
         "checkedBy": ""
     },
     {
         "text": "Faire un kill avec la fontaine",
         "challengers": [
-            "Flofrost",
-            "Soga"
+            "Luna",
+            "Flofrost"
         ],
         "checkedBy": ""
     },
     {
         "text": "Battre le boss final en moins de 30min",
-        "challengers": [],
+        "challengers": [
+            "Luna",
+            "Flofrost"
+        ],
         "checkedBy": ""
     },
     {
         "text": "20 kill avec moins de 5 morts en arnarchie ou moins de 3 morts en turf",
         "challengers": [
-            "Flofrost",
-            "Soga"
+            "Luna",
+            "Flofrost"
         ],
         "checkedBy": ""
     },
     {
         "text": "Faire la mission n\u00b06 du secteur 1 en moins d'1min30",
-        "challengers": [],
-        "checkedBy": "blu"
+        "challengers": [
+            "Luna"
+        ],
+        "checkedBy": ""
     },
     {
         "text": "Utiliser 8 sp\u00e9ciaux en une partie",
-        "challengers": [],
+        "challengers": [
+            "Nolia",
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Obtenir un total de 30 titres dor\u00e9es ",
-        "challengers": [],
+        "challengers": [
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Monter 5 armes 1 \u00e9toiles",
-        "challengers": [],
+        "challengers": [
+            "Nolia",
+            "Luna"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Gagner une partie avec la team enti\u00e8re en \u00e9quipement h\u00e9ro\u00efque",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Gagner 3 matchs avec une \u00e9quipe compos\u00e9 uniquement d'armes exclusives au 3",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Gagner 3 matchs cartes et territoires",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Colorer la page easter egg de google en entier",
-        "challengers": [],
-        "checkedBy": ""
-    },
-    {
-        "text": "Finir le niveau secret d'Alterna",
         "challengers": [
-            "Soga"
+            "Luna"
         ],
         "checkedBy": "red"
     },
     {
+        "text": "Gagner 3 matchs avec une \u00e9quipe compos\u00e9 uniquement d'armes exclusives au 3",
+        "challengers": [
+            "Luna"
+        ],
+        "checkedBy": "red"
+    },
+    {
+        "text": "Gagner 3 matchs cartes et territoires",
+        "challengers": [
+            "Luna"
+        ],
+        "checkedBy": ""
+    },
+    {
+        "text": "Colorer la page easter egg de google en entier",
+        "challengers": [
+            "Luna"
+        ],
+        "checkedBy": "red"
+    },
+    {
+        "text": "Finir le niveau secret d'Alterna",
+        "challengers": [
+            "Flofrost",
+            "Luna",
+            "Nolia"
+        ],
+        "checkedBy": ""
+    },
+    {
         "text": "Gagner 3 matchs anarchies en faisant des K.O.",
-        "challengers": [],
+        "challengers": [
+            "Luna",
+            "Nolia"
+        ],
         "checkedBy": ""
     },
     {
         "text": "Faire coucou aux idols des 3 jeux",
-        "challengers": [],
-        "checkedBy": ""
+        "challengers": [
+            "Luna"
+        ],
+        "checkedBy": "red"
     }
 ]

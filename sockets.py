@@ -60,13 +60,16 @@ def init_sockets(socketio: SocketIO):
         data = UserRequest.model_validate(data)
         if not data.name in bdd.players.keys():
             return
-        connected_users.append(data.name)
+
+        if not data.name in connected_users:
+            connected_users.append(data.name)
         emitConnectedUsers()
         emit("update_bingo", bdd.serializeBingo())
 
     @socketio.on('leave')
     def disconnect(data):
         data = UserRequest.model_validate(data)
+        print(data)
         playerData = bdd.players.get(data.name)
         if playerData is None:
             return
